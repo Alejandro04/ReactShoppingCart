@@ -4,9 +4,9 @@ import Products from './components/products';
 class App extends Component {
   state = {
     products: [
-      {name: 'Tomate', price: 1500, img: '/products/tomate.jpg'},
-      {name: 'Tomate', price: 1500, img: '/products/tomate.jpg'},
-      {name: 'Tomate', price: 1500, img: '/products/tomate.jpg'}
+      {name: 'Tomate', price: 1500, img: './products/tomate.jpg'},
+      {name: 'Tomate', price: 1500, img: './products/tomate.jpg'},
+      {name: 'Tomate', price: 1500, img: './products/tomate.jpg'}
     ]
   }
   render(){
