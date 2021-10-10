@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Button from './button';
 
 const styles = {
   products: {
@@ -22,6 +23,9 @@ class Product extends Component {
         <img style={styles.img} alt={product.name} src={product.img}></img>
         <h3>{product.name}</h3>
         <p>{product.price}</p>
+        <Button onClick={() => AddToCar(product)}>
+          Add to car
+        </Button>
       </div>
     )
   }
