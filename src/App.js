@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Products from './components/products';
 import Layout from './components/layout';
 import Title from './components/title';
+import Navbar from './components/navbar';
 
 class App extends Component {
   state = {
@@ -14,6 +15,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Navbar/>
         <Layout>
           <Title/>
           <Products
