@@ -8,18 +8,40 @@ class App extends Component {
   state = {
     products: [
       { name: 'Tomate', price: 1500, img: './products/tomate.jpg' },
-      { name: 'Tomate', price: 1500, img: './products/tomate.jpg' },
-      { name: 'Tomate', price: 1500, img: './products/tomate.jpg' }
-    ]
+      { name: 'Azucar', price: 200, img: './products/tomate.jpg' },
+      { name: 'Arroz', price: 500, img: './products/tomate.jpg' }
+    ],
+    car: []
   }
+
+  AddToCar = (product) => {
+    const { car } = this.state
+    if (car.find(x => x.name === product.name)) {
+      const newCar = car.map(x => x.name === product.name
+        ? ({
+          ...x,
+          quantity: x.quantity + 1
+        })
+        : x)
+      return this.setState({ car: newCar })
+    }
+    return this.setState({
+      car: this.state.car.concat({
+        ...product,
+        quantity: 1
+      })
+    })
+  }
+
   render() {
+    console.log(this.state.car)
     return (
       <div>
-        <Navbar/>
+        <Navbar car={this.state.car} />
         <Layout>
-          <Title/>
+          <Title />
           <Products
-            AddToCar={() => console.log("ok")}
+            AddToCar={this.AddToCar}
             products={this.state.products}
           />
         </Layout>
