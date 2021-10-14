@@ -7,9 +7,9 @@ import Navbar from './components/navbar';
 class App extends Component {
   state = {
     products: [
-      { name: 'Tomate', price: 1500, img: './products/tomate.jpg' },
-      { name: 'Azucar', price: 200, img: './products/tomate.jpg' },
-      { name: 'Arroz', price: 500, img: './products/tomate.jpg' }
+      { name: 'Tomate', price: 1500, img: '/productos/tomate.jpg' },
+      { name: 'Arbejas', price: 2500, img: '/productos/tomate.jpg' },
+      { name: 'Lechuga', price: 500, img: '/productos/tomate.jpg' },
     ],
     car: []
   }
@@ -34,7 +34,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.car)
     return (
       <div>
         <Navbar car={this.state.car} />
